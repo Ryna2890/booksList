@@ -1,3 +1,7 @@
+React-приложение поиска книг с помощью Google Books API
+Redux, Typescript, Ant Design
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
