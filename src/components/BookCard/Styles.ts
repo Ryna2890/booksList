@@ -14,24 +14,21 @@ export const cardBodyStyle = (single?: boolean) => {
         display: 'flex',
         gap: 8,
         justifyContent: 'space-between',
-        flexDirection: single ? 'row' : 'column'
+        flexDirection: single ? 'row' : 'column',
+        flexWrap:'wrap'
     }
     return styles
 }
 
-export const cardBodyContentStyle = (single?: boolean) => {
-    const style: React.CSSProperties = {
+export const cardBodyContentStyle:React.CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
         gap: 8,
-        width: single ? `${50}%` : undefined
     }
-    return style
-}
 
 export const cardImageContainer = (single?: boolean) => {
     const style: React.CSSProperties = {
-        width: single ? `${300}px` : `${100}%`,
+        minWidth: single ? `${300}px` : `${100}%`,
         maxHeight: 350
     }
     return style

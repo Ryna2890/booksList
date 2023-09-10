@@ -34,7 +34,7 @@ export const BookCard: React.FC<BookCardProps> = ({description, single, authors,
                 src ? <div style={cardImageContainer(single)}><img src={src} style={imageStyle}/></div> :
                     <Empty style={emptyStyle} image={Empty.PRESENTED_IMAGE_SIMPLE}/>
             }
-            <div style={cardBodyContentStyle(single)}>
+            <div style={cardBodyContentStyle } className={single?'cardBodyContent':''}>
                 <Tags tags={category} full={single}/>
                 <Paragraph strong ellipsis={{ rows: 2, expandable: true }}>{title}</Paragraph>
                 {
