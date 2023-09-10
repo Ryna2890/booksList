@@ -14,7 +14,7 @@ import {getAllBooks} from "../../shared /helpers";
 import {addBooks, enableSkip, incrementStartIndex, updateTotalItemsResponse} from "../../features/booksSlice";
 import {BOOKS_PER_PAGE} from "../../shared /consts";
 
-export const LoadingSection:React.FC = ()=>{
+export const LoadingSection: React.FC = () => {
     const search = useAppSelector(selectInput)
     const isSkip = useAppSelector(selectSkip)
     const orderBy = useAppSelector(selectSorting)
@@ -22,11 +22,14 @@ export const LoadingSection:React.FC = ()=>{
     const startIndex = useAppSelector(selectStartIndex)
     const isAnyBooks = useAppSelector(selectIsAnyBooks)
     const isMoreResults = useAppSelector(selectIsMoreResults)
-    const {data,
+    const {
+        data,
         isFetching,
         isError,
-        isUninitialized} = useGetALLBooksQuery({
-        search,orderBy,category,startIndex},{skip:isSkip});
+        isUninitialized
+    } = useGetALLBooksQuery({
+        search, orderBy, category, startIndex
+    }, {skip: isSkip});
     const dispatch = useAppDispatch();
 
 
@@ -41,7 +44,7 @@ export const LoadingSection:React.FC = ()=>{
         return () => {
             !isSkip && dispatch(enableSkip())
         }
-    }, [isSkip ])
+    }, [isSkip])
 
     useEffect(() => {
         if (data) {

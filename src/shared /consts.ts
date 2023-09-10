@@ -1,4 +1,4 @@
-import {IbooksSliceState, IQuery} from "../features/Books/books.models";
+import {IbooksSliceState} from "../features/Books/books.models";
 
 interface IOptions {
     value: string

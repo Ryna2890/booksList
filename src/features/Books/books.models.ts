@@ -1,5 +1,4 @@
 import {BookCardProps} from "../../components/BookCard/BookCard";
-import {booksSlice} from "../booksSlice";
 
 interface IIndustryIdentifiers {
     type: string
@@ -106,17 +105,17 @@ export interface IBooksModels {
 
 export interface IQuery {
     category: string;
-    search?:string;
+    search?: string;
     orderBy: string;
-    startIndex:number;
+    startIndex: number;
 }
 
 export interface IbooksSliceState {
     category: string;
-    search?:string;
+    search?: string;
     orderBy: string;
-    startIndex:number;
-    skip:boolean;
-    books:BookCardProps[]|[];
-    totalItems:number;
+    startIndex: number;
+    skip: boolean;
+    books: BookCardProps[] | [];
+    totalItems: number;
 }
