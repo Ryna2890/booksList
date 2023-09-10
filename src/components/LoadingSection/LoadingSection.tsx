@@ -40,11 +40,11 @@ export const LoadingSection: React.FC = () => {
         dispatch(incrementStartIndex(BOOKS_PER_PAGE))
     }
 
-    useEffect(() => {
-        return () => {
-            !isSkip && dispatch(enableSkip())
-        }
-    }, [isSkip])
+    // useEffect(() => {
+    //     return () => {
+    //         !isSkip && dispatch(enableSkip())
+    //     }
+    // }, [isSkip])
 
     useEffect(() => {
         if (data) {
@@ -67,7 +67,7 @@ export const LoadingSection: React.FC = () => {
         ) : !isAnyBooks && !isUninitialized ? (
             <Empty style={emptyStyle} image={Empty.PRESENTED_IMAGE_SIMPLE}/>
         ) : isUninitialized ? (
-            <div>Введите в поиск ключевые слова и я покажу здесь список книг 📚</div>
+            <div>Enter keywords into the search and I will show a list of books here 📚</div>
         ) : null}
     </>
 }

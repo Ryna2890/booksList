@@ -3,7 +3,6 @@ import type { RootState, AppDispatch } from "./store"
 import {createSelector} from "@reduxjs/toolkit";
 import {BOOKS_PER_PAGE} from "../shared /consts";
 
-// Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
@@ -18,7 +17,6 @@ export const selectTotalItems = (state: RootState) => state.booksSlice.totalItem
 export const selectIsMoreResults = (state: RootState) =>
     state.booksSlice.totalItems > state.booksSlice.startIndex + BOOKS_PER_PAGE
 
-/* Create Selectors */
 export const selectIsAnyBooks = createSelector(selectAllBooks, (books) =>
     books ? !!books.length : 0
 )

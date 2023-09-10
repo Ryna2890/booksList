@@ -19,11 +19,11 @@ export const BooksList: React.FC = () => {
             style={{flexWrap: 'wrap'}}
             gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
             {books.length > 0 && books.map((book, index) => (
-                <Link to={`/book/${book.id}`}  key={index}>
-                <Col className="gutter-row" style={{cursor: 'pointer',padding: '8px 0'}}>
+                <Col className="gutter-row" style={{cursor: 'pointer',padding: '8px 0'}} key={index}>
+                    <Link role='link' to={`/book/${book.id}`}  >
                     <BookCard {...book}  />
+                    </Link>
                 </Col>
-                </Link>
             ))}
         </Row>
         <Row justify={"center"}> <LoadingSection/></Row>

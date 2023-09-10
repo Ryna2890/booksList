@@ -14,7 +14,6 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({
         getALLBooks: builder.query<IBooksModels, IQuery>({
             query: (data) => {
-                // url: `/volumes?q=${query.search}${query.category}&orderBy=${query.orderBy}&maxResults=40&startIndex=${query.startIndex}&key=${BOOKS_API_KEY}`,
                 const startRequest = `volumes?q=${data.search}`
                 const subject = data.category !== 'all' ? `+subject:${data.category}` : ''
                 const startIndex = `&startIndex=${data.startIndex}`

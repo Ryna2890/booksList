@@ -11,23 +11,30 @@ import {
     updateSorting
 } from "../../features/booksSlice";
 import {contentStyle, headerStyle, rowStyle} from "./Styles";
-import {Outlet} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 
 export const Main: React.FC = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
 
     const onSearch = useCallback((value: string) => {
+        navigate('/')
         dispatch(updateSearchAndResetIndex(value))
     },[])
 
     const handleChange = useCallback((value: string, type: string) => {
         if (type === 'category') {
+            navigate('/')
             dispatch(updateCategory(value))
         } else {
+            navigate('/')
             dispatch(updateSorting(value))
         }
 
     },[])
+
+
 
     return (
         <Space direction="vertical" style={{width: "100%"}} size={[0, 48]}>

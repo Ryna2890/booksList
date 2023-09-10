@@ -7,7 +7,7 @@ export const CurrentBook: React.FC = () => {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    const book = useAppSelector((state) => selectBookById(state, id!))
+    const book = useAppSelector((state) => selectBookById(state, id?id:''))
 
     useEffect(() => {
         if (!book) navigate('/')
@@ -16,9 +16,10 @@ export const CurrentBook: React.FC = () => {
             left: 0,
             behavior: 'auto',
         })
-    }, [book])
+    }, [book,id])
 
     if (!book) return null
+
     return <BookCard
         src={book.src}
         title={book.title}
